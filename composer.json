@@ -1,0 +1,21 @@
+{
+    "name": "psys/symfony-utils",
+    "description": "Set of utilities for Symfony framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Psys\\SymfonyUtils\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David Petrásek",
+            "email": "davidpetrasek@hotmail.cz"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/form": "^7.0"
+    }
+}
