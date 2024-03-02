@@ -3,7 +3,7 @@ namespace SymfonyUtils;
 
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Utils\Result;
 
 class Misc
 {    
@@ -13,21 +13,18 @@ class Misc
     )
     {}
     
-    public function emailIsValid(string $email, bool $returnErrors = false) : bool|array
+    public function isEmailValid(string $email) : Result
     {
-        $emailConstraint = new Assert\Email();
-        //         $emailConstraint->message = 'Neplatná e-mailová adresa';
-        
+        $emailConstraint = new Assert\Email();        
         $errors = $this->validator->validate( $email, $emailConstraint );
         
-        if (!$errors->count())
+        if (empty($errors->count()))
         {
-            return true;
+            return new Result(true);
         }
         else
         {
-            if ($returnErrors) {return $errors[0]->getMessage();}       //TODO: Result
-            else               {return false;}
+            return new Result(false, $errors[0]->getMessage());
         }
     }
 }

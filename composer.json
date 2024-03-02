@@ -16,6 +16,13 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "symfony/form": "^7.0"
+        "symfony/form": "^7.0",
+        "symfony/filesystem": "^7.0",
+        "symfony/monolog-bundle": "^3.10",
+        "symfony/process": "^7.0",
+        "doctrine/doctrine-bundle": "^2.11",
+        "symfony/security-bundle": "^7.0",
+        "symfony/validator": "^7.0",
+        "psys/utils": "^1.0"
     }
 }
