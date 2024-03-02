@@ -12,11 +12,11 @@ class Misc
         private ValidatorInterface $validator,
     )
     {}
-    
+
     public function isEmailValid(string $email) : Result
     {
         $emailConstraint = new Assert\Email();        
-        $errors = $this->validator->validate( $email, $emailConstraint );
+        $errors = $this->validator->validate($email, $emailConstraint);
         
         if (empty($errors->count()))
         {
