@@ -1,5 +1,5 @@
 <?php
-namespace SymfonyUtils;
+namespace Psys\SymfonyUtils;
 
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

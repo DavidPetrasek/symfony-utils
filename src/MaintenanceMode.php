@@ -1,6 +1,6 @@
 <?php
 
-namespace SymfonyUtils;
+namespace Psys\SymfonyUtils;
 
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Filesystem\Filesystem;
