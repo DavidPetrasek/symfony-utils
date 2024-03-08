@@ -16,18 +16,19 @@ class FileUploader
     public function __construct
     (
         private SluggerInterface $slugger,
-        private $projectDir,
         private LoggerInterface $logger,
-        private Filesystem $filesystem
+        private Filesystem $filesystem,
+        private $projectDir,
     )
     {}
     
-    public function nahrat (UploadedFile $file, $absTargetDir, $stripMetadata = true, $customFileSystemName = '')
+    public function saveFile(UploadedFile $file, $relTargetDir, $stripMetadata = false, $customFileSystemName = '')
     {
         $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $safeFilename = $this->slugger->slug($originalFilename);
         $mimeType = $file->getMimeType();
         $extension = $file->guessExtension();
+        $absTargetDir = $this->projectDir.$relTargetDir;
         
         if (empty($customFileSystemName))
         {
