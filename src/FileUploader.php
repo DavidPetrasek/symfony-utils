@@ -99,7 +99,7 @@ class FileUploader
 //                 $pages = (int)$imagick->getNumberImages(); 
                 
                 // Save all pages as temporary JPGs
-                $absCestyTemp = [];
+                $absPathsTemp = [];
                 foreach ($imagick as $i => $im) 
                 {                                            //
                     $im->setImageFormat('jpeg');
@@ -116,13 +116,13 @@ class FileUploader
                     }
                     
                     $im->writeImage($absPath);
-                    $absCestyTemp[] = $absPath;
+                    $absPathsTemp[] = $absPath;
                 }                
 //                 
                 $imagick->clear();
                 
                 // New PDF from temporary JPGs
-                $imagick = new \Imagick($absCestyTemp);
+                $imagick = new \Imagick($absPathsTemp);
                 $imagick->setImageFormat('pdf');
                 $imagick->writeImages($fileAbsPath, true); 
                 $imagick->clear();
@@ -130,7 +130,7 @@ class FileUploader
                 // Remove temporary JPGs
                 try
                 {
-                    $this->filesystem->remove($absCestyTemp);
+                    $this->filesystem->remove($absPathsTemp);
                 }
                 catch (IOExceptionInterface $exception)
                 {
