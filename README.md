@@ -5,7 +5,7 @@
 
 ## Add this to services.yaml:
 
-```
+``` yaml
 Psys\SymfonyUtils\FormErrors:
     autowire: true
 Psys\SymfonyUtils\FileUploader:
