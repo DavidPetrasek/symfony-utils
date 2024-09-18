@@ -5,6 +5,13 @@
 
 ## Add this to services.yaml:
 
+### _defaults:
+``` yaml
+bind:
+    $projectDir: '%kernel.project_dir%'
+```
+
+### at the end:
 ``` yaml
 Psys\SymfonyUtils\FormErrors:
     autowire: true
