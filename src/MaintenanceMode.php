@@ -110,7 +110,7 @@ class MaintenanceMode
 //         
 //         return;
         
-        // Create new .htaccess from the current onee
+        // Create new .htaccess from the current one
         $orig_htaccess_content = file_get_contents($this->projectDir.'/public/htaccess');
         $mm_htaccess_prepend_content =
 "# Deny access to .htaccess

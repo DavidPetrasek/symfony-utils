@@ -19,3 +19,5 @@ Psys\SymfonyUtils\FileUploader:
     autowire: true
 ```
 
+### MaintenanceMode is currently not working as it should
+
